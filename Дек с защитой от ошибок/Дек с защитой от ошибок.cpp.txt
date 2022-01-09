@@ -1,0 +1,57 @@
+#include <cstdio>
+    #include <cstring>
+    #include <deque>
+    using namespace std;
+deque <int> d;
+int n;
+char s[100];
+int main(void)
+{
+    while(scanf("%s",&s))
+    {
+        if(strcmp(s,"push_front") == 0)
+        {
+            scanf("%d",&n);
+            d.push_front(n);
+            puts("ok");
+        }
+        else if(strcmp(s,"push_back") == 0)
+        { scanf("%d",&n);
+         d.push_back(n);
+         puts("ok");
+        }
+        else if(strcmp(s,"pop_front") == 0 && !d.empty())
+        {
+            printf("%d\n",d.front());
+            d.pop_front();
+        }
+        else if(strcmp(s,"pop_back") == 0 && !d.empty())
+        { 
+            printf("%d\n",d.back());
+            d.pop_back();
+        }
+        else if(strcmp(s,"front") == 0 && !d.empty())
+        {
+            printf("%d\n",d.front());
+        } 
+        else if(strcmp(s,"back") == 0 && !d.empty())
+        { printf("%d\n",d.back());
+        } else if(strcmp(s,"size") == 0)
+        { 
+            printf("%d\n",d.size());
+                                         } 
+        else if(strcmp(s,"clear") == 0) 
+        { 
+            while(!d.empty()) 
+                d.pop_back(); 
+            puts("ok");
+        }
+        else if(strcmp(s,"exit") == 0)
+        {
+            puts("bye");
+            break;
+        }
+        else puts("error");
+    }
+    return 0; 
+}
